@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Personal Information Website</title>
 </head>
 <body>
-    <h1>Hello I am Soham</h1>
+    <div class="h1_class">
+        <h1>Hello I am Soham</h1>
+    </div>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde, 
+            repellendus reprehenderit eaque in dignissimos? Expedita, ullam. Iure laudantium
+            numquam necessitatibus enim, nulla corrupti quos tenetur libero repudiandae ipsam officia?
+        </p>
+    </div>
+    <nav>
+        <a href="{{ url_for('about_page') }}">About</a>
+        <a href="{{ url_for('skills_page') }}">Skills</a>
+        <a href="{{ url_for('contact_page') }}">Contact</a>
+    </nav>
+    
 </body>
 </html>
