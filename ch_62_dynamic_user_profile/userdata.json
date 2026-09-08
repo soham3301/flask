@@ -1,0 +1,62 @@
+{
+    "soham": {
+        "name": "soham",
+        "age": 35,
+        "occupation": "jobless",
+        "favourite_language": "bengali"
+    },
+    "amitabh": {
+        "name": "amitabh",
+        "age": 34,
+        "occupation": "jobless",
+        "favourite_language": "bengali"
+    },
+    "priyasi": {
+        "name": "priyasi",
+        "age": 27,
+        "occupation": "actress",
+        "favourite_language": "bengali"
+    },
+    "akash": {
+        "name": "akash",
+        "age": 32,
+        "occupation": "govt job",
+        "favourite_language": "hindi"
+    },
+    "ram": {
+        "name": "ram",
+        "age": 22,
+        "occupation": "veer",
+        "favourite_language": "hindi"
+    },
+    "subhadeep": {
+        "name": "subhadeep",
+        "age": 31,
+        "occupation": "agri officer",
+        "favourite_language": "english"
+    },
+    "souvik": {
+        "name": "souvik",
+        "age": 36,
+        "occupation": "kerani",
+        "favourite_language": "hindi"
+    },
+    "joy": {
+        "name": "joy",
+        "age": 44,
+        "occupation": "coder",
+        "favourite_language": "english"
+    },
+    "debasish": {
+        "name": "debasish",
+        "age": 35,
+        "occupation": "gym trainer",
+        "favourite_language": "english"
+    },
+    "sarala": {
+        "name": "sarala",
+        "age": 20,
+        "occupation": "model",
+        "favourite_language": "english"
+    }
+}
