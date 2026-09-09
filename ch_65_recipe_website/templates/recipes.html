@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Recipes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('recipes_page') }}">Recipes</a>
+  </div>
+
+  <div class="container">
+    <h1>All Recipes</h1>
+
+    {% for recipe_id, recipe in all_recipes.items() %}
+      <div class="card">
+        <h2>{{ recipe.name }}</h2>
+        <span class="category">{{ recipe.category }}</span>
+        <p>{{ recipe.description }}</p>
+        <a href="{{ url_for('recipe_page', the_id=recipe_id) }}" class="btn">View Recipe</a>
+      </div>
+    {% endfor %}
+
+  </div>
+
+</body>
+</html>

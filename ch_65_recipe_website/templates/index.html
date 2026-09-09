@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('recipes_page') }}">Recipes</a>
+  </div>
+
+  <div class="container" style="text-align: center;">
+    <h1>Welcome to My Recipe Website</h1>
+    <p>Find simple and delicious recipes here!</p>
+    <a href="{{ url_for('recipes_page') }}" class="btn">Browse Recipes</a>
+  </div>
+
+</body>
+</html>
