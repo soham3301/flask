@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2> Here are the list of users</h2>
+
+<h3>
+    {% for username in users %}
+        <a href="{{ url_for('user_page', user_id=username) }}">Click to see {{ users[username].name }}'s details</a>
+    {% endfor %}
+</h3>
+
+<a href="{{ url_for('homepage') }}">Previous Page</a>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Task Checklist</h2>
+
+    {% set total_tasks = tasks|length %}
+    <div class="card">
+        <p><strong>Total Pending/Done Items:</strong> {{ total_tasks }}</p>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task_dict in tasks %}
+                {% for task_name, task_status in task_dict.items() %}
+                <tr>
+                    <td>{{ task_name|replace('_', ' ')|capitalize }}</td>
+                    <td>
+                        {% if task_status == 'done' %}
+                            <span class="badge badge-complete">Done</span>
+                        {% else %}
+                            <span class="badge badge-pending">Pending</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

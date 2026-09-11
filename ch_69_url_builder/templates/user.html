@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Click below to check {{the_user.name}}'s posts</h2>
+    <a href="{{ url_for('posts_page', username = the_user.username) }}">Click Here</a>
+
+<a href="{{ url_for('users_page') }}">Previous Page</a>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Project Overview</h2>
+
+    {% for proj_id, proj in projects.items() %}
+    <div class="card">
+        <h3>{{ proj.name|replace('_', ' ')|capitalize }}</h3>
+        
+        <p>
+            <strong>Status:</strong> 
+            {% if proj.status == 'complete' %}
+                <span class="badge badge-complete">Complete</span>
+            {% else %}
+                <span class="badge badge-pending">Pending</span>
+            {% endif %}
+        </p>
+
+        <p>
+            <strong>Manager:</strong> 
+            {% if proj.manager in users %}
+                {{ users[proj.manager].email }} ({{ proj.manager }})
+            {% else %}
+                {{ proj.manager }}
+            {% endif %}
+        </p>
+
+        <p><strong>Assigned Employees:</strong></p>
+        <ul>
+            {% for emp_id in proj.employee %}
+                <li>
+                    {% if emp_id in users %}
+                        {{ emp_id }} - {{ users[emp_id].email }}
+                    {% else %}
+                        {{ emp_id }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+        <p>No projects available.</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card center-text">
+        <h1>Welcome to the Management Portal</h1>
+        <p>Select a section below to navigate through the database:</p>
+        
+        <div class="button-group">
+            <a href="{{ url_for('homepage') }}" class="btn">Home</a>
+            <a href="{{ url_for('users_page') }}" class="btn">Users</a>
+            <a href="{{ url_for('project_page') }}" class="btn">Projects</a>
+            <a href="{{ url_for('tasks_page') }}" class="btn">Tasks</a>
+        </div>
+    </div>
+{% endblock %}

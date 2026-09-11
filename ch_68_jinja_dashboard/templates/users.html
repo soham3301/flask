@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>User Directory</h2>
+
+    {% set total_users = users|length %}
+    <div class="card">
+        <p><strong>Total Users:</strong> {{ total_users }}</p>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Tasks Completed</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for username, user_info in users.items() %}
+            <tr>
+                <td><strong>{{ username }}</strong></td>
+                <td>
+                    {% if user_info.role == 'manager' %}
+                        <span class="badge badge-manager">Manager</span>
+                    {% else %}
+                        <span class="badge badge-employee">Employee</span>
+                    {% endif %}
+                </td>
+                <td>{{ user_info.email }}</td>
+                <td>
+                    {% if user_info.account_status == 'active' %}
+                        <span class="status-active">Active</span>
+                    {% else %}
+                        <span class="status-inactive">Inactive</span>
+                    {% endif %}
+                </td>
+                <td>{{ user_info.task_done }}</td>
+                <td>${{ "{:,}".format(user_info.salary) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

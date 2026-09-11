@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Here is {{ the_user.name }}'s Posts</h2>
+    {% for post in all_posts %}
+        <div>
+            {{ all_posts[post] }}
+        </div>
+    {% endfor %}
+
+<a href="{{ url_for('user_page', user_id=the_user.username) }}">Previous Page</a>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Management Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a class="nav-brand" href="{{ url_for('homepage') }}">Dashboard</a>
+        <a href="{{ url_for('homepage') }}">Home</a>
+        <a href="{{ url_for('users_page') }}">Users</a>
+        <a href="{{ url_for('project_page') }}">Projects</a>
+        <a href="{{ url_for('tasks_page') }}">Tasks</a>
+    </div>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
